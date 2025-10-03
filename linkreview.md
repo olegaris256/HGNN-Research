@@ -32,3 +32,9 @@
 | **Modeling Relational Data with Graph Convolutional Networks** | 2018 | Michael Schlichtkrull, Thomas N. Kipf, et al. | [Ссылка](https://arxiv.org/abs/1703.06103) | Одна из первых и ключевых работ по применению **GCN для моделирования графов знаний** (в частности, для предсказания связей). Вводит Relational-GCN (R-GCN). |
 | **Unifying Large Language Models and Knowledge Graphs: A Roadmap** | 2024 | Shirley Wu, Guan-Ting Liu, Yu-Chen Lin, et al. | [Ссылка](https://arxiv.org/abs/2306.08302) | **Дорожная карта**, которая систематизирует и описывает три основных парадигмы интеграции LLM и KG: KG-усиленные LLM, LLM-усиленные KG, и синергетические подходы. RAG является частью первой парадигмы. |
 | **Retrieval-Augmented Generation with Graphs (GraphRAG)** | 2025 | Haoyu Han, Yu Wang, Harry Shomer, Kai Guo, Jiayuan Ding, Yongjia Lei, Mahantesh Halappanavar, Ryan A. Rossi, Subhabrata Mukherjee, Xianfeng Tang, Qi He, Zhigang Hua, Bo Long, Tong Zhao, Neil Shah, Amin Javari, Yinglong Xia, Jiliang Tang | [Ссылка](https://arxiv.org/abs/2501.00309) | Современный обзор GraphRAG – RAG с использованием графовых структур знаний. Представлена цельная схема GraphRAG, включающая компоненты для обработки запроса, извлечения, организации, генерации и управления источниками данных. Авторы рассматривают методы GraphRAG, адаптированные к различным прикладным областям, и обсуждают ключевые исследовательские задачи и перспективы развития этой технологии |
+
+### Тема 4: Дуальные представления в HGNN
+
+| Название | Год | Автор | Ссылка | Краткое содержание |
+| :--- | :-- | :--- | :--- | :--- |
+| ~coming soon~ |
