@@ -6,151 +6,61 @@
 \usepackage[T1]{fontenc}
 \usepackage{url}
 \usepackage{booktabs}
-\usepackage{amsfonts}
+\usepackage{amsmath, amssymb, amsfonts}
 \usepackage{nicefrac}
 \usepackage{microtype}
-\usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{natbib}
 \usepackage{doi}
 
+\title{Сравнительный анализ графовых и гиперграфовых нейронных сетей и их применение в задачах Retrieval-Augmented Generation}
 
-
-\title{A template for the \emph{arxiv} style}
-
-\author{ David S.~Hippocampus\thanks{Use footnote for providing further
-		information about author (webpage, alternative
-		address)---\emph{not} for acknowledging funding agencies.} \\
-	Department of Computer Science\\
-	Cranberry-Lemon University\\
-	Pittsburgh, PA 15213 \\
-	\texttt{hippo@cs.cranberry-lemon.edu} \\
-	%% examples of more authors
-	\And
-	Elias D.~Striatum \\
-	Department of Electrical Engineering\\
-	Mount-Sheikh University\\
-	Santa Narimana, Levand \\
-	\texttt{stariate@ee.mount-sheikh.edu} \\
-	%% \AND
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
+\author{
+  Аристеев О.~А. \\
+  Московский физико-технический институт \\
+  Москва, Россия \\
+  \texttt{email1@example.com} 
+  \And
+  Прокофьев П.~А. \\
+  Московский государственный университет \\
+  Москва, Россия \\
+  \texttt{email2@example.com} 
 }
 \date{}
 
-\renewcommand{\shorttitle}{\textit{arXiv} Template}
+\renewcommand{\shorttitle}{GNN vs HGNN для Retrieval-Augmented Generation}
 
-%%% Add PDF metadata to help others organize their library
-%%% Once the PDF is generated, you can check the metadata with
-%%% $ pdfinfo template.pdf
 \hypersetup{
-pdftitle={A template for the arxiv style},
-pdfsubject={q-bio.NC, q-bio.QM},
-pdfauthor={David S.~Hippocampus, Elias D.~Striatum},
-pdfkeywords={First keyword, Second keyword, More},
+pdftitle={Сравнительный анализ графовых и гиперграфовых нейронных сетей и их применение в задачах Retrieval-Augmented Generation},
+pdfsubject={cs.LG, cs.AI},
+pdfauthor={Аристеев О.~А., Прокофьев П.~А.},
+pdfkeywords={графовые нейронные сети, гиперграфовые нейронные сети, Geometric Deep Learning, Retrieval-Augmented Generation, LLM},
 }
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-	\lipsum[1]
+Графовые и гиперграфовые нейронные сети (GNN и HGNN) становятся ключевыми инструментами для анализа данных со сложной структурой. В то время как GNN зарекомендовали себя как фундаментальный метод в обработке графов, HGNN позволяют моделировать более сложные n-арные отношения, выходя за рамки бинарных связей. Настоящее исследование имеет три направления: (1) сравнительный анализ возможностей GNN и HGNN, (2) включение HGNN в рамки Geometric Deep Learning как обобщённой парадигмы обучения на структурированных данных, (3) применение гиперграфов в построении Retrieval-Augmented Generation (RAG) для работы с графами знаний. В работе систематизируются существующие методы, обсуждаются их сильные и слабые стороны, а также выявляются перспективные направления, связанные с интеграцией HGNN и LLM через гиперграфовые представления знаний.
 \end{abstract}
 
+\keywords{графовые нейронные сети \and гиперграфовые нейронные сети \and Geometric Deep Learning \and Retrieval-Augmented Generation \and LLM}
 
-\keywords{First keyword \and Second keyword \and More}
+\section{Введение}
 
-\section{Introduction}
-\lipsum[2]
-\lipsum[3]
+Современные приложения искусственного интеллекта требуют методов, способных обрабатывать сложные структуры данных: от социальных сетей и биологических систем до баз знаний для больших языковых моделей. Классические графовые нейронные сети (GNN) показали высокую эффективность, однако они ограничены моделированием бинарных связей. Гиперграфовые нейронные сети (HGNN) открывают новые возможности, позволяя работать с n-арными отношениями и более богатыми структурными зависимостями.
 
-\section{Headings: first level}
-\label{sec:headings}
+Одним из подходов является развитие методов HGNN и их сопоставление с GNN по качеству, вычислительной эффективности и устойчивости. Параллельно HGNN могут быть встроены в более широкую теоретическую рамку Geometric Deep Learning, которая рассматривает нейросетевые архитектуры как обобщение принципов симметрий и инвариантностей. Ещё одно направление связано с практическими приложениями: графы знаний, являясь важным источником структурированной информации, могут быть представлены в виде гиперграфов и использоваться в Retrieval-Augmented Generation (RAG). Такой подход позволяет моделировать не только простые пары сущностей, но и сложные факты с несколькими участниками. Сравнительное изучение этих направлений даёт основу для создания более выразительных и интерпретируемых моделей.
 
-\lipsum[4] See Section \ref{sec:headings}.
+В рамках работы предполагается провести сравнительный анализ GNN и HGNN с опорой на современные исследования и бенчмарки. Кроме того, будет рассмотрено место HGNN в общей картине Geometric Deep Learning. Особое внимание планируется уделить применению гиперграфов для представления знаний и их интеграции в RAG, что может расширить возможности LLM за счёт более богатых структурных представлений. Такой комплексный подход позволит выявить сильные и слабые стороны текущих методов и очертить направления для дальнейших исследований.
 
-\subsection{Headings: second level}
-\lipsum[5]
-\begin{equation}
-	\xi _{ij}(t)=P(x_{t}=i,x_{t+1}=j|y,v,w;\theta)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}
-\end{equation}
+\section{Литературный обзор}
 
-\subsubsection{Headings: third level}
-\lipsum[6]
+Классические работы по GNN \citep{kipf2017gnn,hamilton2017sage,velickovic2018gat} заложили основу для современных моделей, использующих свёртки, агрегацию признаков и механизмы внимания. С другой стороны, HGNN \citep{feng2019hgnn} позволили расширить эти идеи на гиперграфовые структуры, что открыло путь к обработке n-арных связей. Современные обзоры \citep{yang2025survey} и бенчмарки \citep{li2025benchmarks} подтверждают рост интереса к HGNN, предлагая классификации методов и стандартизированные наборы данных для их оценки.
 
-\paragraph{Paragraph}
-\lipsum[7]
+Geometric Deep Learning \citep{bronstein2021gdl} представляет собой общую рамку, объединяющую CNN, GNN, трансформеры и их обобщения через симметрии и инвариантности. HGNN занимают в этой картине особое место, так как они естественно связаны с более высокопорядковыми структурами. Таким образом, HGNN рассматриваются как связующее звено между GNN и более общими методами топологического машинного обучения.
 
-
-
-\section{Examples of citations, figures, tables, references}
-\label{sec:others}
-
-\subsection{Citations}
-Citations use \verb+natbib+. The documentation may be found at
-\begin{center}
-	\url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
-\end{center}
-
-Here is an example usage of the two main commands (\verb+citet+ and \verb+citep+): Some people thought a thing \citep{kour2014real, hadash2018estimate} but other people thought something else \citep{kour2014fast}. Many people have speculated that if we knew exactly why \citet{kour2014fast} thought this\dots
-
-\subsection{Figures}
-\lipsum[10]
-See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of the first footnote.}
-\lipsum[11]
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.5\textwidth]{../figures/log_reg_cs_exp.eps}
-	\caption{Sample figure caption.}
-	\label{fig:fig1}
-\end{figure}
-
-\subsection{Tables}
-See awesome Table~\ref{tab:table}.
-
-The documentation for \verb+booktabs+ (`Publication quality tables in LaTeX') is available from:
-\begin{center}
-	\url{https://www.ctan.org/pkg/booktabs}
-\end{center}
-
-
-\begin{table}
-	\caption{Sample table title}
-	\centering
-	\begin{tabular}{lll}
-		\toprule
-		\multicolumn{2}{c}{Part}                   \\
-		\cmidrule(r){1-2}
-		Name     & Description     & Size ($\mu$m) \\
-		\midrule
-		Dendrite & Input terminal  & $\sim$100     \\
-		Axon     & Output terminal & $\sim$10      \\
-		Soma     & Cell body       & up to $10^6$  \\
-		\bottomrule
-	\end{tabular}
-	\label{tab:table}
-\end{table}
-
-\subsection{Lists}
-\begin{itemize}
-	\item Lorem ipsum dolor sit amet
-	\item consectetur adipiscing elit.
-	\item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
-\end{itemize}
-
+Графы знаний традиционно используются в NLP для представления фактов и связей между сущностями \citep{hogan2021kg}. С появлением RAG \citep{lewis2020rag} возникла новая парадигма — использование внешних структурированных знаний для улучшения генерации. Современные исследования расширяют эту идею: от GraphRAG \citep{han2025graphrag} до HyperGraphRAG \citep{luo2025hypergraphrag}, где гиперграфовые структуры позволяют интегрировать сложные отношения. Дополнительные работы \citep{wu2024memory,rasmussen2025dynamic,anokhin2024agents} показывают, что графы знаний могут стать динамическим компонентом памяти LLM-агентов. В этой перспективе HGNN могут стать естественным инструментом для представления и обработки гиперграфов знаний.
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}
